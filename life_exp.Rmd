@@ -1,5 +1,20 @@
 ---
-title: "exp"
+title: "life_exp_analysis"
 output: html_document
 ---
+
+```{r}
+library(tidyverse)
+library(gapminder)
+```
+
+```{r}
+data("gapminder_unfiltered")
+```
+
+```{r}
+gapminder_unfiltered %>% 
+  group_by(year,country) %>% 
+  slice_max(lifeExp,n = 1)
+```
 
